@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <base href="/web/v1/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>Desafio Fipe</title>
+</head>
+<body>
+    <nav>
+        <a href="cars">Carros</a>
+        <a href="motorcycles">Motos</a>
+        <a href="trucks">Caminhões</a>
+    </nav>
+    <table><thead><tr><th>VEICULO</th></tr></thead><tbody>
+        <tr th:each="msg: ${payload}">
+            <td><a th:href="${urlPrefix} + ${msg.code} + ${urlSuffix}" th:text="${msg.name}"></a></td>
+        </tr>
+    </tbody></table>
+    <p th:text="${error}">This is a notice box. It's useful for calling out snippets of information. Cool, huh?</p>
+
+</body>
+</html>
